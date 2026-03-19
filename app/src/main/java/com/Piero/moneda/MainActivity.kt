@@ -1,6 +1,5 @@
 package com.Piero.moneda
 
-
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -23,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         radioSoles = findViewById(R.id.radio1)
     }
 
+    fun miClicManejador(view: View) {
+        when (view.id) {
+            R.id.bntConvertir -> convertirMoneda()
+        }
+    }
+
     private fun convertirMoneda() {
         val cantidadTexto = editTextCantidad.text.toString().trim()
 
@@ -32,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val cantidad = cantidadTexto.toFloatOrNull()
+
         if (cantidad == null || cantidad <= 0) {
             mostrarError("Ingresa un número válido mayor a 0")
             return
@@ -41,26 +47,17 @@ class MainActivity : AppCompatActivity() {
             radioDolares.isChecked -> {
                 val soles = convierteDolaresASoles(cantidad)
                 mostrarResultado("%.2f dólares = %.2f soles".format(cantidad, soles))
-                radioDolares.isChecked = false
-                radioSoles.isChecked = true
+
             }
 
             radioSoles.isChecked -> {
                 val dolares = convierteSolesADolares(cantidad)
                 mostrarResultado("%.2f soles = %.2f dólares".format(cantidad, dolares))
-                radioSoles.isChecked = false
-                radioDolares.isChecked = true
             }
 
             else -> {
                 mostrarError("Selecciona una moneda para convertir")
             }
-        }
-    }
-
-    fun miClicManejador(view: View) {
-        when (view.id) {
-            R.id.bntConvertir -> convertirMoneda()
         }
     }
 
