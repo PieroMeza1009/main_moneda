@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese cantidad a convertir"
+        android:inputType="numberDecimal|numberSigned"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00BCD4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:background="#FFEB3B"
+        app:layout_constraintTop_toBottomOf="@id/editTextText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="A soles" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="A dólares" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bntConvertir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Calcular"
+        android:onClick="miClicManejador"
+        android:backgroundTint="#673AB7"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
