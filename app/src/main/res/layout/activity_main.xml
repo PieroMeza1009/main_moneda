@@ -1,68 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="0dp"
+        android:id="@+id/edtCantidad"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese cantidad a convertir"
-        android:inputType="numberDecimal|numberSigned"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#00BCD4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:hint="Ingrese cantidad"
+        android:inputType="numberDecimal|numberSigned" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical"
-        android:background="#FFEB3B"
-        app:layout_constraintTop_toBottomOf="@id/editTextText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <Spinner
+        android:id="@+id/spOrigen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <RadioButton
-            android:id="@+id/radio0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="A soles" />
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="A dólares" />
-    </RadioGroup>
+    <Spinner
+        android:id="@+id/spDestino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/bntConvertir"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnConvertir"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Calcular"
-        android:onClick="miClicManejador"
-        android:backgroundTint="#673AB7"
-        app:layout_constraintTop_toBottomOf="@id/radioGroup1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="Convertir" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtResultado"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Piero_Meza"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="575dp" />
+        android:text="Resultado"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
